@@ -1,0 +1,91 @@
+/* 主にゲームオーバーとポーズのオーバーレイ画面のスタイル */
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: #000;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#app {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+#ui-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 10;
+}
+
+#hud {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: #00ffff;
+    font-size: 24px;
+    font-weight: bold;
+    text-shadow: 0 0 5px #00ffff;
+}
+
+#pause-screen,
+#game-over-screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+#pause-screen.hidden,
+#game-over-screen.hidden {
+    display: none;
+}
+
+h1 {
+    font-size: 64px;
+    margin-bottom: 20px;
+    letter-spacing: 5px;
+}
+
+#pause-screen h1 {
+    color: #ffff00;
+    text-shadow: 0 0 10px #ffff00;
+}
+
+#game-over-screen h1 {
+    color: #ff0000;
+    text-shadow: 0 0 10px #ff0000;
+}
+
+p {
+    font-size: 24px;
+}
+
+.blink {
+    animation: blinker 1.5s linear infinite;
+}
+
+@keyframes blinker {
+    50% {
+        opacity: 0;
+    }
+}
