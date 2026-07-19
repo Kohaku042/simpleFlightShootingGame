@@ -40,7 +40,7 @@ export class Player {
         const loader = new GLTFLoader();
         return new Promise<void>((resolve, reject) => {
             loader.load(
-                '/jet.glb', // publicディレクトリからの読み込み
+                import.meta.env.BASE_URL + 'jet.glb', // publicディレクトリからの読み込み
                 (gltf) => {
                     this.mesh = gltf.scene;
                     this.mesh.position.set(0, 100, 0);
